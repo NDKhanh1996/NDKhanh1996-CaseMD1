@@ -24,23 +24,6 @@ class Bird {
 
 }
 
-let bird = new Bird(birdImage,300, 180,40,40,40)
-
-requestAnimationFrame(bird.drawBird)
-setInterval(function fall() {
-    if (bird.top < window.innerHeight -260){
-        ctx.clearRect(bird.left, bird.top, bird.width, bird.height)
-        bird.moveBot()
-        bird.drawBird()
-
-    }
-}, 300)
-window.addEventListener('keydown', function (event) {
-    if (event.key === ' '){
-        ctx.clearRect(bird.left, bird.top, bird.width, bird.height)
-        bird.moveTop()
-    }
-})
 
 
 
