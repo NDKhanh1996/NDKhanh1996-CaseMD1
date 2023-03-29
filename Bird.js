@@ -10,18 +10,22 @@ class Bird {
         this.height = height
         this.speed = speed
     }
-    moveBot(){
-        this.top += this.speed;
+
+    drawBird() {
+        ctx.drawImage(this.image, this.left, this.top, this.width, this.height);
     }
-    moveTop(){
+
+    moveBot() {
+        if (this.top < 410) {
+            ctx.clearRect(this.left, this.top, this.width, this.height)
+            this.top += 2;
+            this.drawBird()
+        }
+    }
+
+    moveTop() {
         this.top -= this.speed;
     }
-    drawBird() {
-    ctx.drawImage(this.image, this.left, this.top, this.width, this.height);
-
-
-}
-
 }
 
 
