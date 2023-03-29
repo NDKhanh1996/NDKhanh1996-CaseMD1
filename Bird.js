@@ -1,6 +1,5 @@
 const birdImage = new Image();
 birdImage.src = "./images.jpeg";
-
 class Bird {
     constructor(image, left, top, width, height, speed) {
         this.image = image
@@ -18,10 +17,7 @@ class Bird {
     }
     drawBird() {
     ctx.drawImage(this.image, this.left, this.top, this.width, this.height);
-
-
 }
-
 }
 
 

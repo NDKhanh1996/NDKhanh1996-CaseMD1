@@ -1,10 +1,7 @@
 const pipeTopIMG = new Image();
 pipeTopIMG.src = "./R 2.png";
-
 const pipeBotIMG = new Image();
 pipeBotIMG.src = "./R.png";
-
-
 class Pipe {
     constructor(image, left, top, width, height, speed) {
         this.image = image
@@ -20,6 +17,4 @@ class Pipe {
     drawPipe() {
         ctx.drawImage(this.image, this.left, this.top, this.width, this.height);
     }
-
 }
-
