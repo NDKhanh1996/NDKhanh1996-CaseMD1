@@ -21,25 +21,54 @@ class Bird {
 
     }
 
+    // GameOver() {
+    //     if (this.top >= 450) {
+    //         alert('Game Over')
+    //     } else if ((pipeTop.top + 200) >= this.top && this.top >= pipeTop.top && (pipeTop.left + 100) >= this.left && this.left >= pipeTop.left) {
+    //         if (!this.gameOverTriggered) {
+    //             alert('Game Over')
+    //             this.gameOverTriggered = true
+    //         }
+    //     } else if ((pipeTop1.top + 200) >= this.top && this.top >= pipeTop1.top && (pipeTop1.left + 100) >= this.left && this.left >= pipeTop1.left) {
+    //         if (!this.gameOverTriggered) {
+    //             alert('Game Over')
+    //             this.gameOverTriggered = true
+    //         }
+    //     } else if ((pipeBot.top + 200) >= this.top && this.top >= pipeBot.top && (pipeBot.left + 100) >= this.left && this.left >= pipeBot.left) {
+    //         if (!this.gameOverTriggered) {
+    //             alert('Game Over')
+    //             this.gameOverTriggered = true
+    //         }
+    //     } else if ((pipeBot1.top + 200) >= this.top && this.top >= pipeBot1.top && (pipeBot1.left + 100) >= this.left && this.left >= pipeBot1.left) {
+    //         if (!this.gameOverTriggered) {
+    //             alert('Game Over')
+    //             this.gameOverTriggered = true
+    //         }
+    //     }
+    // }
+
+
+
+
     GameOver() {
         if (this.top >= 450) {
             alert('Game Over')
-        } else if ((pipeTop.top + 200) >= this.top && this.top >= pipeTop.top && (pipeTop.left + 100) >= this.left && this.left >= pipeTop.left) {
+        } else if (this.top + 40 >= pipeTop.top && this.top <= pipeTop.top + 200 && this.left + 40 >= pipeTop.left && this.left <= pipeTop.left + 100) {
             if (!this.gameOverTriggered) {
                 alert('Game Over')
                 this.gameOverTriggered = true
             }
-        } else if ((pipeTop1.top + 200) >= this.top && this.top >= pipeTop1.top && (pipeTop1.left + 100) >= this.left && this.left >= pipeTop1.left) {
+        } else if (this.top + 40 >= pipeTop1.top && this.top <= pipeTop1.top + 200 && this.left + 40 >= pipeTop1.left && this.left <= pipeTop1.left + 100) {
             if (!this.gameOverTriggered) {
                 alert('Game Over')
                 this.gameOverTriggered = true
             }
-        } else if ((pipeBot.top + 200) >= this.top && this.top >= pipeBot.top && (pipeBot.left + 100) >= this.left && this.left >= pipeBot.left) {
+        } else if (this.top + 40 >= pipeBot.top && this.top <= pipeBot.top + 200 && this.left + 40 >= pipeBot.left && this.left <= pipeBot.left + 100) {
             if (!this.gameOverTriggered) {
                 alert('Game Over')
                 this.gameOverTriggered = true
             }
-        } else if ((pipeBot1.top + 200) >= this.top && this.top >= pipeBot1.top && (pipeBot1.left + 100) >= this.left && this.left >= pipeBot1.left) {
+        } else if (this.top + 40 >= pipeBot1.top && this.top <= pipeBot1.top + 200 && this.left + 40 >= pipeBot1.left && this.left <= pipeBot1.left + 100) {
             if (!this.gameOverTriggered) {
                 alert('Game Over')
                 this.gameOverTriggered = true
