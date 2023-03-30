@@ -29,12 +29,9 @@ class Pipe {
             if (this.top < 0) {
                 this.top = -100
                 this.randomHeight()
-                // this.top = Math.floor(Math.random() * (350 - 250 + 1)) + this.top
-
             } else if (this.top > 200) {
                 this.top = 250
                 this.randomHeight()
-                // this.top = Math.floor(Math.random() * (350 - 250 + 1)) + this.top
             }
             this.left = 800
             this.moveLeft()

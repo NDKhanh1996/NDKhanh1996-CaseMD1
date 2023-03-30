@@ -16,10 +16,11 @@ function autoMove() {
 
 autoMove();
 window.addEventListener('keydown', function (event) {
-    if (event.key === ' ') {
-        ctx.clearRect(bird.left, bird.top, bird.width, bird.height)
-        bird.moveTop()
+        if (bird.top > 0) {
+            if (event.key === ' ') {
+                ctx.clearRect(bird.left, bird.top, bird.width, bird.height)
+                bird.moveTop()
+            }
+        }
     }
-})
-
-
+)
