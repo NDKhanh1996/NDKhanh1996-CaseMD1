@@ -1,16 +1,28 @@
 let ctx = document.getElementById('canvas').getContext('2d');
 let canvas = document.getElementById('canvas')
-let pipe1 = new Pipe(pipeTopIMG, 1200,  -250, 100, 500, 50) // pipeTop
-let pipe2 = new Pipe(pipeBotIMG, 1200, pipe1.top + 750, 100, 500, 50) // pipeBot
+let pipe1 = new Pipe(pipeTopIMG, 1200,  -250, 100, 600) // pipeTop
+let pipe2 = new Pipe(pipeBotIMG, 1200, pipe1.top + 850, 100, 600) // pipeBot
 
-let pipe3 = new Pipe(pipeTopIMG, 1900,  -300, 100, 500, 50) // pipeTop1
-let pipe4 = new Pipe(pipeBotIMG, 1900, pipe3.top + 750, 100, 500, 50) // pipeBot1
+let pipe3 = new Pipe(pipeTopIMG, 1900,  -300, 100, 600) // pipeTop1
+let pipe4 = new Pipe(pipeBotIMG, 1900, pipe3.top + 850, 100, 600) // pipeBot1
 
 let bird = new Bird(birdImage, 300, 200, 40, 40);
+let meteor1 = new Meteor(meteorImage,1280,0,30,30)
+let meteor2 = new Meteor(meteorImage,1280,0,30,30)
+let meteor3 = new Meteor(meteorImage,1280,0,30,30)
+let meteor4 = new Meteor(meteorImage,1280,0,30,30)
+let meteor5 = new Meteor(meteorImage,1280,0,30,30)
+let meteor6 = new Meteor(meteorImage,1280,0,30,30)
 let speed = 0
 let animationId;
 function autoMove() {
     bird.moveBot();
+    meteor1.meteorFall()
+    meteor2.meteorFall()
+    meteor3.meteorFall()
+    meteor4.meteorFall()
+    meteor5.meteorFall()
+    meteor6.meteorFall()
     pipe1.moveLeft();
     pipe3.moveLeft();
     pipe2.moveLeft();

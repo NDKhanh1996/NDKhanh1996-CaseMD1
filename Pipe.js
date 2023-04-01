@@ -13,12 +13,12 @@ class Pipe {
     }
     randomHeight() {
         if(pipe1.left < -200){
-            pipe1.top = Math.random() * 500 -500
-            pipe2.top = pipe1.top + 750
+            pipe1.top = Math.random() * 650 - 600
+            pipe2.top = pipe1.top + 850
         }
         if (pipe3.left < -200){
-            pipe3.top = Math.random() * 500 -500
-            pipe4.top = pipe3.top + 750
+            pipe3.top = Math.random() * 650 - 600
+            pipe4.top = pipe3.top + 850
         }
     }
 
@@ -34,7 +34,7 @@ class Pipe {
     }
 
     moveLeft() {
-        ctx.clearRect(this.left, this.top -1, this.width, this.height + 1)
+        ctx.clearRect(this.left, this.top -5, this.width, this.height + 5)
         if (speed <= 10){
             speed = score + 2
         }

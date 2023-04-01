@@ -24,9 +24,9 @@ class Bird {
         if (!this.gameOverTriggered) {
             ctx.fillStyle = 'brown'
             ctx.font = "80px Arial";
-            ctx.fillText(`GAME OVER ` , 150, 180, 10000)
-            ctx.fillText(`F5 TO CONTINUE ` , 70, 290, 10000)
-            ctx.fillText(`:v` , 390, 400, 10000)
+            ctx.fillText(`GAME OVER ` , 400, 300, 10000)
+            ctx.fillText(`F5 TO CONTINUE ` , 320, 410, 10000)
+            ctx.fillText(`:v` , 550, 520, 10000)
             cancelAnimationFrame(animationId)
             this.gameOverTriggered = true
         }
@@ -34,11 +34,18 @@ class Bird {
 
     GameOver() {
         const pipes = [pipe1, pipe3, pipe2, pipe4];
+        const meteors = [meteor1, meteor2, meteor3, meteor4, meteor5 ,meteor6];
         if (this.top >= canvas.height) {
             this.GameOverAlert();
         } else {
             for (let i = 0; i < pipes.length; i++) {
-                if (this.top + 40 >= pipes[i].top && this.top <= pipes[i].top + 500 && this.left + 40 >= pipes[i].left && this.left <= pipes[i].left + 100) {
+                if (this.top + this.height >= pipes[i].top && this.top <= pipes[i].top + pipe1.height && this.left + this.width >= pipes[i].left && this.left <= pipes[i].left + pipe1.width) {
+                    this.GameOverAlert();
+                    break;
+                }
+            }
+            for (let i = 0; i < meteors.length; i++) {
+                if (this.top + this.height >= meteors[i].top && this.top <= meteors[i].top + meteor1.height && this.left + this.width >= meteors[i].left && this.left <= meteors[i].left + meteor1.width) {
                     this.GameOverAlert();
                     break;
                 }
@@ -61,8 +68,8 @@ class Bird {
 
     moveBot() {
         if (this.top < canvas.height) {
-            ctx.clearRect(this.left, this.top, this.width, this.height)
-            this.top += 1;
+            ctx.clearRect(this.left, this.top - 1, this.width, this.height + 100)
+            this.top += 1.5;
             this.drawBird()
             this.scored()
         }
