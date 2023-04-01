@@ -12,32 +12,37 @@ class Pipe {
         this.height = height
     }
     randomHeight() {
-        pipeTop.top = Math.floor(Math.random() * (250 - 250 + 1)) -100
-        pipeTop1.top = Math.floor(Math.random() * (250 - 250 + 1)) -100
-    }
-    loop(){
-        if (this.left < -400) {
-
-            ctx.clearRect(this.left, this.top, this.width, this.height)
-            this.randomHeight()
-            this.left = 800
+        if(pipe1.left < -200){
+            pipe1.top = Math.random() * 500 -500
+            pipe2.top = pipe1.top + 750
+        }
+        if (pipe3.left < -200){
+            pipe3.top = Math.random() * 500 -500
+            pipe4.top = pipe3.top + 750
         }
     }
 
+    loop(){
+        if (this.left < -200) {
+            this.randomHeight()
+            this.left = 1300
+        }
+    }
 
     drawPipe() {
-
         ctx.drawImage(this.image, this.left, this.top, this.width, this.height);
     }
 
     moveLeft() {
-        ctx.clearRect(this.left, this.top, this.width, this.height)
+        ctx.clearRect(this.left, this.top -1, this.width, this.height + 1)
         if (speed <= 10){
             speed = score + 2
         }
-        this.left -= speed;
-        this.drawPipe();
+        // this.left -= speed;
+        this.left -= 2;
         this.loop()
+        this.drawPipe();
+
 
     }
 }

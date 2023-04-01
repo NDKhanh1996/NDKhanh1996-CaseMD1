@@ -27,36 +27,31 @@ class Bird {
             ctx.fillText(`GAME OVER ` , 150, 180, 10000)
             ctx.fillText(`F5 TO CONTINUE ` , 70, 290, 10000)
             ctx.fillText(`:v` , 390, 400, 10000)
-            cancelAnimationFrame()
+            cancelAnimationFrame(animationId)
             this.gameOverTriggered = true
         }
     }
+
     GameOver() {
-        if (this.top >= 450) {
-            this.GameOverAlert()
-        } else if (this.top + 40 >= pipeTop.top && this.top <= pipeTop.top + 200 && this.left + 40 >= pipeTop.left && this.left <= pipeTop.left + 100) {
-            this.GameOverAlert()
-        } else if (this.top + 40 >= pipeTop1.top && this.top <= pipeTop1.top + 200 && this.left + 40 >= pipeTop1.left && this.left <= pipeTop1.left + 100) {
-            this.GameOverAlert()
-        } else if (this.top + 40 >= pipeBot.top && this.top <= pipeBot.top + 200 && this.left + 40 >= pipeBot.left && this.left <= pipeBot.left + 100) {
-            this.GameOverAlert()
-        } else if (this.top + 40 >= pipeBot1.top && this.top <= pipeBot1.top + 200 && this.left + 40 >= pipeBot1.left && this.left <= pipeBot1.left + 100) {
-            this.GameOverAlert()
+        const pipes = [pipe1, pipe3, pipe2, pipe4];
+        if (this.top >= canvas.height) {
+            this.GameOverAlert();
+        } else {
+            for (let i = 0; i < pipes.length; i++) {
+                if (this.top + 40 >= pipes[i].top && this.top <= pipes[i].top + 500 && this.left + 40 >= pipes[i].left && this.left <= pipes[i].left + 100) {
+                    this.GameOverAlert();
+                    break;
+                }
+            }
         }
     }
 
     scored() {
-        if (this.left === pipeTop.left + 100) {
-            score = score + 1
-        }
-        if (this.left === pipeTop1.left + 100) {
-            score++
-        }
-        if (this.left === pipeBot.left + 100) {
-            score++
-        }
-        if (this.left === pipeBot1.left + 100) {
-            score++
+        const pipes = [pipe1, pipe2, pipe3, pipe4];
+        for (let i = 0; i < pipes.length; i++) {
+            if (this.left === pipes[i].left + 100) {
+                score++;
+            }
         }
         ctx.clearRect(10, 6, 250, 30)
         ctx.font = "30px Arial";
@@ -65,9 +60,9 @@ class Bird {
     }
 
     moveBot() {
-        if (this.top < 450) {
+        if (this.top < canvas.height) {
             ctx.clearRect(this.left, this.top, this.width, this.height)
-            this.top += 2;
+            this.top += 1;
             this.drawBird()
             this.scored()
         }

@@ -1,28 +1,30 @@
 let ctx = document.getElementById('canvas').getContext('2d');
-let pipeTop = new Pipe(pipeTopIMG, 800,  -50, 100, 200, 50)
-let pipeBot = new Pipe(pipeBotIMG, 800, pipeTop.top + 350, 100, 200, 50)
+let canvas = document.getElementById('canvas')
+let pipe1 = new Pipe(pipeTopIMG, 1200,  -250, 100, 500, 50) // pipeTop
+let pipe2 = new Pipe(pipeBotIMG, 1200, pipe1.top + 750, 100, 500, 50) // pipeBot
 
-let pipeTop1 = new Pipe(pipeTopIMG, 1400,  -100, 100, 200, 50)
-let pipeBot1 = new Pipe(pipeBotIMG, 1400, pipeTop1.top + 350, 100, 200, 50)
+let pipe3 = new Pipe(pipeTopIMG, 1900,  -300, 100, 500, 50) // pipeTop1
+let pipe4 = new Pipe(pipeBotIMG, 1900, pipe3.top + 750, 100, 500, 50) // pipeBot1
 
-let bird = new Bird(birdImage, 300, 200, 40, 40)
+let bird = new Bird(birdImage, 300, 200, 40, 40);
 let speed = 0
+let animationId;
 function autoMove() {
     bird.moveBot();
-    pipeTop.moveLeft()
-    pipeTop1.moveLeft()
-    pipeBot.moveLeft()
-    pipeBot1.moveLeft()
-    bird.GameOver()
-    requestAnimationFrame(autoMove);
+    pipe1.moveLeft();
+    pipe3.moveLeft();
+    pipe2.moveLeft();
+    pipe4.moveLeft();
+    animationId = requestAnimationFrame(autoMove);
+    bird.GameOver();
 }
 
 autoMove();
 window.addEventListener('keydown', function (event) {
         if (bird.top > 0) {
             if (event.key === ' ') {
-                ctx.clearRect(bird.left, bird.top, bird.width, bird.height)
-                bird.moveTop()
+                ctx.clearRect(bird.left, bird.top, bird.width, bird.height);
+                bird.moveTop();
             }
         }
     }
