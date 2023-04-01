@@ -1,0 +1,6 @@
+.BG {
+    background-image: url('bg.gif');
+    background-size: cover;
+    width: 800px;
+    height: 450px;
+}
