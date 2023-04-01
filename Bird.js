@@ -69,7 +69,6 @@ class Bird {
             ctx.clearRect(this.left, this.top, this.width, this.height)
             this.top += 2;
             this.drawBird()
-            // this.GameOver()
             this.scored()
         }
     }

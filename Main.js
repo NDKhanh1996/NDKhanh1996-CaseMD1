@@ -1,8 +1,8 @@
 let ctx = document.getElementById('canvas').getContext('2d');
-let pipeTop = new Pipe(pipeTopIMG, 800, -50, 100, 200, 50)
+let pipeTop = new Pipe(pipeTopIMG, 800,  -50, 100, 200, 50)
 let pipeBot = new Pipe(pipeBotIMG, 800, pipeTop.top + 350, 100, 200, 50)
 
-let pipeTop1 = new Pipe(pipeTopIMG, 1400, -100, 100, 200, 50)
+let pipeTop1 = new Pipe(pipeTopIMG, 1400,  -100, 100, 200, 50)
 let pipeBot1 = new Pipe(pipeBotIMG, 1400, pipeTop1.top + 350, 100, 200, 50)
 
 let bird = new Bird(birdImage, 300, 200, 40, 40)
