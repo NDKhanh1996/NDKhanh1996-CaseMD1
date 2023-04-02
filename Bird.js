@@ -1,5 +1,5 @@
 const birdImage = new Image();
-birdImage.src = "./images.png";
+birdImage.src = "./Bird.png";
 let score = 0
 
 class Bird {

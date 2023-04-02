@@ -1,7 +1,7 @@
 const pipeTopIMG = new Image();
-pipeTopIMG.src = "./R 2.png";
+pipeTopIMG.src = "./PipeTop.png";
 const pipeBotIMG = new Image();
-pipeBotIMG.src = "./R.png";
+pipeBotIMG.src = "./PipeBot.png";
 
 class Pipe {
     constructor(image, left, top, width, height) {

@@ -1,5 +1,5 @@
 const meteorImage = new Image();
-meteorImage.src = "./download.png";
+meteorImage.src = "./Meteor.png";
 
 
 class Meteor {
