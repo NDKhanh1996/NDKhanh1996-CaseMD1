@@ -16,7 +16,7 @@ let meteor6 = new Meteor(meteorImage,1280,0,30,30)
 
 
 
-let bullet = new Bullet(bulletImage, bird.left + 40, bird.top + 20, 200, 200)
+let bullet = new Bullet(bulletImage, bird.left + 40, bird.top + 20, 100, 100)
 
 let mob = new Mob(mobImage, 1300, 0, 100, 100)
 let mob1 = new Mob(mobImage, 2000, 700, 100, 100)
@@ -32,16 +32,16 @@ let animationId;
 function autoMove() {
     bullet.bulletMoveRight()
     bird.moveBot();
-    // meteor1.meteorFall()
-    // meteor2.meteorFall()
-    // meteor3.meteorFall()
-    // meteor4.meteorFall()
-    // meteor5.meteorFall()
-    // meteor6.meteorFall()
-    // pipe1.moveLeft();
-    // pipe3.moveLeft();
-    // pipe2.moveLeft();
-    // pipe4.moveLeft();
+    meteor1.meteorFall()
+    meteor2.meteorFall()
+    meteor3.meteorFall()
+    meteor4.meteorFall()
+    meteor5.meteorFall()
+    meteor6.meteorFall()
+    pipe1.moveLeft();
+    pipe3.moveLeft();
+    pipe2.moveLeft();
+    pipe4.moveLeft();
     mob.moveLeft()
     mob1.moveLeft()
     mob2.moveLeft()

@@ -31,9 +31,6 @@ class Mob {
         } else if (mob2.top >= 700 && mob2.top <= 900) {
             direction2 = -1;
         }
-
-
-
     }
 
     mobRandomHeight() {
@@ -44,17 +41,22 @@ class Mob {
     }
     mobLoop(){
         if (this.left < -700) {
-            this.left = 1300
+            this.left = 1600
+        }
+    }
+    mobDead() {
+        if (this.top + this.height >= bullet.top && this.top <= bullet.top + bullet.height && this.left + this.width >= bullet.left && this.left <= bullet.left + bullet.width) {
+            ctx.clearRect(this.left, this.top - 2, this.width + 3, this.height + 3)
+            this.left = 1700
         }
     }
 
     moveLeft() {
+        this.mobDead()
         ctx.clearRect(this.left, this.top -5, this.width, this.height + 10)
         this.left -= 2;
         this.mobLoop()
         this.mobRandomHeight()
         this.drawMob();
-
-
     }
 }

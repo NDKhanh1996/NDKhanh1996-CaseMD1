@@ -35,6 +35,7 @@ class Bird {
     GameOver() {
         const pipes = [pipe1, pipe3, pipe2, pipe4];
         const meteors = [meteor1, meteor2, meteor3, meteor4, meteor5 ,meteor6];
+        const mobs = [mob, mob1, mob2]
         if (this.top >= canvas.height) {
             this.GameOverAlert();
         } else {
@@ -46,6 +47,12 @@ class Bird {
             }
             for (let i = 0; i < meteors.length; i++) {
                 if (this.top + this.height >= meteors[i].top && this.top <= meteors[i].top + meteor1.height && this.left + this.width >= meteors[i].left && this.left <= meteors[i].left + meteor1.width) {
+                    this.GameOverAlert();
+                    break;
+                }
+            }
+            for (let i = 0; i < mobs.length; i++) {
+                if (this.top + this.height >= mobs[i].top && this.top <= mobs[i].top + mob.height && this.left + this.width >= mobs[i].left && this.left <= mobs[i].left + mob.width) {
                     this.GameOverAlert();
                     break;
                 }
