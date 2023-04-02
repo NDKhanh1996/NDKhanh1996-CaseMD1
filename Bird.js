@@ -20,13 +20,14 @@ class Bird {
         this.top -= 50
         console.log('speed ' + speed)
     }
-    GameOverAlert(){
+
+    GameOverAlert() {
         if (!this.gameOverTriggered) {
             ctx.fillStyle = 'brown'
             ctx.font = "80px Arial";
-            ctx.fillText(`GAME OVER ` , 400, 300, 10000)
-            ctx.fillText(`F5 TO CONTINUE ` , 320, 410, 10000)
-            ctx.fillText(`:v` , 550, 520, 10000)
+            ctx.fillText(`GAME OVER `, 400, 300, 10000)
+            ctx.fillText(`F5 TO CONTINUE `, 320, 410, 10000)
+            ctx.fillText(`:v`, 550, 520, 10000)
             cancelAnimationFrame(animationId)
             this.gameOverTriggered = true
         }
@@ -34,7 +35,7 @@ class Bird {
 
     GameOver() {
         const pipes = [pipe1, pipe3, pipe2, pipe4];
-        const meteors = [meteor1, meteor2, meteor3, meteor4, meteor5 ,meteor6];
+        const meteors = [meteor1, meteor2, meteor3, meteor4, meteor5, meteor6];
         const mobs = [mob, mob1, mob2]
         if (this.top >= canvas.height) {
             this.GameOverAlert();
@@ -69,7 +70,7 @@ class Bird {
         }
         ctx.clearRect(10, 6, 250, 30)
         ctx.font = "30px Arial";
-        ctx.fillText("Score " + score/2, 10, 30, 10000)
+        ctx.fillText("Score " + score / 2, 10, 30, 10000)
         document.getElementById('score').innerHTML = 'score: ' + score
     }
 

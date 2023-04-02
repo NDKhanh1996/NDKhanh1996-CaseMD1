@@ -1,7 +1,6 @@
 const meteorImage = new Image();
 meteorImage.src = "./Meteor.png";
 
-
 class Meteor {
     constructor(image, left, top, width, height) {
         this.image = image

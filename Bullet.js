@@ -13,15 +13,16 @@ class Bullet {
     drawBullet() {
         ctx.drawImage(this.image, this.left, this.top, this.width, this.height);
     }
+
     bulletMoveRight() {
-        ctx.clearRect(this.left, this.top -5 , this.width, this.height + 8)
+        ctx.clearRect(this.left, this.top - 5, this.width, this.height + 8)
         this.left += 5;
         this.drawBullet();
         this.bulletLoop();
     }
 
-    bulletLoop(){
-        if ( this.left > 1300){
+    bulletLoop() {
+        if (this.left > 1300) {
             this.left = bird.left + 40
             this.top = bird.top + 20
         }
