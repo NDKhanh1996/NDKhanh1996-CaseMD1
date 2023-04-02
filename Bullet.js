@@ -14,8 +14,8 @@ class Bullet {
         ctx.drawImage(this.image, this.left, this.top, this.width, this.height);
     }
     bulletMoveRight() {
-        ctx.clearRect(this.left, this.top , this.width, this.height )
-        this.left += 2;
+        ctx.clearRect(this.left, this.top -5 , this.width, this.height)
+        this.left += 5;
         this.drawBullet();
         this.bulletLoop();
 

@@ -39,7 +39,7 @@ class Pipe {
             speed = score + 2
         }
         // this.left -= speed;
-        this.left -= 2;
+        this.left -= 1.5;
         this.loop()
         this.drawPipe();
 

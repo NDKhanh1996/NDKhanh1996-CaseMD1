@@ -16,11 +16,8 @@ let meteor6 = new Meteor(meteorImage,1280,0,30,30)
 
 
 
-let bullet = new Bullet(bulletImage, bird.left + 40, bird.top + 20, 20, 20)
-// let bullet1 = new Bullet(bulletImage, bird.left + 40, bird.top + 20, 20, 20)
-// let bullet2 = new Bullet(bulletImage, bird.left + 40, bird.top + 20, 20, 20)
-// let bullet3 = new Bullet(bulletImage, bird.left + 40, bird.top + 20, 20, 20)
-// let bullets = [bullet, bullet1, bullet2, bullet3];
+let bullet = new Bullet(bulletImage, bird.left + 40, bird.top + 20, 200, 200)
+
 
 let speed = 0
 let animationId;
