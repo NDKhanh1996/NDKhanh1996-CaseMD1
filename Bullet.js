@@ -15,7 +15,7 @@ class Bullet {
     }
 
     bulletMoveRight() {
-        ctx.clearRect(this.left, this.top - 5, this.width, this.height + 8)
+        ctx.clearRect(this.left - 3, this.top - 5, this.width, this.height + 8)
         this.left += 5;
         this.drawBullet();
         this.bulletLoop();

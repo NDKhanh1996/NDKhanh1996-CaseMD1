@@ -2,6 +2,7 @@ const pipeTopIMG = new Image();
 pipeTopIMG.src = "./PipeTop.png";
 const pipeBotIMG = new Image();
 pipeBotIMG.src = "./PipeBot.png";
+let firstScore = false
 
 class Pipe {
     constructor(image, left, top, width, height) {
@@ -14,11 +15,11 @@ class Pipe {
 
     randomHeight() {
         if (pipe1.left < -200) {
-            pipe1.top = Math.random() * 650 - 600
+            pipe1.top = Math.random() * 650 - 650
             pipe2.top = pipe1.top + 850
         }
         if (pipe3.left < -200) {
-            pipe3.top = Math.random() * 650 - 600
+            pipe3.top = Math.random() * 650 - 650
             pipe4.top = pipe3.top + 850
         }
     }
@@ -26,8 +27,19 @@ class Pipe {
     loop() {
         if (this.left < -200) {
             this.randomHeight()
+            score++;
             this.left = 1300
         }
+    }
+    drawScore() {
+        if (!firstScore && pipe1.left + pipe1.width < bird.left){
+            score += 2
+            firstScore = true
+        }
+        ctx.clearRect(10, 6, 250, 30)
+        ctx.font = "30px Arial";
+        ctx.fillText("Score " + score / 2, 10, 30, 10000)
+        document.getElementById('score').innerHTML = 'score: ' + score
     }
 
     drawPipe() {
@@ -35,6 +47,7 @@ class Pipe {
     }
 
     moveLeft() {
+        this.drawScore()
         ctx.clearRect(this.left, this.top - 5, this.width, this.height + 5)
         if (speed <= 10) {
             speed = score + 2

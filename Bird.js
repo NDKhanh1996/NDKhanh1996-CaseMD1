@@ -62,16 +62,16 @@ class Bird {
     }
 
     scored() {
-        const pipes = [pipe1, pipe2, pipe3, pipe4];
-        for (let i = 0; i < pipes.length; i++) {
-            if (this.left === pipes[i].left + 100) {
-                score++;
-            }
-        }
-        ctx.clearRect(10, 6, 250, 30)
-        ctx.font = "30px Arial";
-        ctx.fillText("Score " + score / 2, 10, 30, 10000)
-        document.getElementById('score').innerHTML = 'score: ' + score
+        // const pipes = [pipe1, pipe2, pipe3, pipe4];
+        // for (let i = 0; i < pipes.length; i++) {
+        //     if (pipes[i].left < -199) {
+        //         score++;
+        //     }
+        // }
+        // ctx.clearRect(10, 6, 250, 30)
+        // ctx.font = "30px Arial";
+        // ctx.fillText("Score " + score / 2, 10, 30, 10000)
+        // document.getElementById('score').innerHTML = 'score: ' + score
     }
 
     moveBot() {

@@ -2,10 +2,9 @@ let ctx = document.getElementById('canvas').getContext('2d');
 let canvas = document.getElementById('canvas')
 let pipe1 = new Pipe(pipeTopIMG, 1200, -250, 100, 600) // pipeTop
 let pipe2 = new Pipe(pipeBotIMG, 1200, pipe1.top + 850, 100, 600) // pipeBot
-
 let pipe3 = new Pipe(pipeTopIMG, 1900, -300, 100, 600) // pipeTop1
 let pipe4 = new Pipe(pipeBotIMG, 1900, pipe3.top + 850, 100, 600) // pipeBot1
-let bird = new Bird(birdImage, 300, 200, 40, 40);
+let bird = new Bird(birdImage, 500, 200, 40, 40);
 let meteor1 = new Meteor(meteorImage, 1280, 0, 30, 30)
 let meteor2 = new Meteor(meteorImage, 1280, 0, 30, 30)
 let meteor3 = new Meteor(meteorImage, 1280, 0, 30, 30)
