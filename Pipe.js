@@ -49,9 +49,7 @@ class Pipe {
     moveLeft() {
         this.drawScore()
         ctx.clearRect(this.left, this.top - 5, this.width, this.height + 5)
-        if (speed <= 10) {
-            speed = score + 2
-        }
+        speed = score + 2
         // this.left -= speed;
         this.left -= 1.5;
         this.loop()
